@@ -1,8 +1,14 @@
-// Load the file system's module and writing a file
-const fs = require('fs')
+// Importing and Exporting modules
+// const add = require('./utils')
 
-// fs.writeFileSync('notes', 'My name is Herbert.')
+// const sum = add(4, -2)
+
+// console.log(sum)
 
 
-//First Challenge: Append a message to notes
-fs.appendFileSync('notes', '\n I have 28 years old. J\'ai dix-sept ans.')
+//***Challenge: Define and use a function in a new file
+const getNotes = require('./notes.js')
+
+const msg = getNotes()
+
+console.log(msg)

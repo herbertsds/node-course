@@ -7,6 +7,8 @@ const msg = getNotes()
 
 log(msg)
 
-log(chalk.green.bold.inverse('Success!'))
-
 // Challenge: use the chalk library in my project
+
+log(chalk.blue.bold.inverse('Success!'))
+
+log(process.argv[2])

@@ -1,14 +1,12 @@
-// Importing and Exporting modules
-// const add = require('./utils')
-
-// const sum = add(4, -2)
-
-// console.log(sum)
-
-
-//***Challenge: Define and use a function in a new file
 const getNotes = require('./notes.js')
+const chalk = require('chalk')
+
+const log = console.log
 
 const msg = getNotes()
 
-console.log(msg)
+log(msg)
+
+log(chalk.green.bold.inverse('Success!'))
+
+// Challenge: use the chalk library in my project

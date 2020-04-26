@@ -19,10 +19,16 @@ yargs.command({
             describe: 'Note title',
             demandOption: true,
             type: 'string'
+        },
+        body: {
+            describe: 'Note body',
+            demandOption: true,
+            type: 'string'
         }
     },
     handler: function(argv){
-        log('Adding a new note', argv)
+        log(`${chalk.bold.inverse('Title:')} ${argv.title}`)
+        log(`${chalk.bold.inverse('Body:')} ${argv.body}`)
     }
 })
 

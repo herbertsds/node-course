@@ -16,8 +16,19 @@ const fs = require('fs')
 
 // fs.writeFileSync('1-json.json', bookJSON)
 
-const dataBuffer = fs.readFileSync('1-json.json')
-const dataJSON = dataBuffer.toString()
-const data = JSON.parse(dataJSON)
+// const dataBuffer = fs.readFileSync('1-json.json')
+// const dataJSON = dataBuffer.toString()
+// const data = JSON.parse(dataJSON)
 
-log(data.title)
+// log(data.title)
+
+// Challenge: Work with JSON and the file system
+
+const dataBuffer = fs.readFileSync('1-json.json')
+const dataJSON = JSON.parse(dataBuffer.toString())
+
+
+dataJSON.name = 'Herbert'
+dataJSON.city = 'Belford Roxo'
+
+fs.writeFileSync('1-json.json', JSON.stringify(dataJSON))

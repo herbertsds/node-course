@@ -1,7 +1,7 @@
 const chalk = require('chalk')
 //Importing argv as separated variable to facilite
 const yargs = require('yargs')
-const getNotes = require('./notes.js')
+const notes = require('./notes.js')
 
 //Making the logs more easy
 const log = console.log
@@ -27,8 +27,7 @@ yargs.command({
         }
     },
     handler: function(argv){
-        log(`${chalk.bold.inverse('Title:')} ${argv.title}`)
-        log(`${chalk.bold.inverse('Body:')} ${argv.body}`)
+        notes.addNote(argv.title, argv.body)
     }
 })
 

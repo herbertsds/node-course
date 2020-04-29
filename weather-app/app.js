@@ -1,16 +1,10 @@
-const log = console.log
-log('Starting')
+const access_key = require('./access_key')
+const request = require('postman-request')
 
+const url = `http://api.weatherstack.com/current?access_key=${access_key}&query=37.8267,-122.4233`
 
-setTimeout(()=>{
-    log('2 Second Timer')
+request({ url }, (error, response) => {
+    const data = JSON.parse(response.body)
 
-}, 2000)
-
-setTimeout(()=>{
-    log('0 Second Timer')
-
-}, 0)
-
-
-log('Stopping')
+    console.log(data.current)
+})

@@ -4,15 +4,12 @@ const access_key = require('../access_key')
 const forecast = (lat, long, callback) => {
     const url = `http://api.weatherstack.com/current?access_key=${access_key.weatherstack}&query=${lat},${long}`
 
-    request({url, json: true}, (error, response) => {
+    request({url, json: true}, (error, { body:{ error:responseError, current:{temperature, feelslike, weather_descriptions}={}, location:{name, country, region}={} } = {} } = {}) => {
         if(error){
             callback('Unable to connect to weather service!')
-        }else if(response.body.error){
-            callback(response.body.error.info)
+        }else if(responseError){
+            callback(responseError.info)
         }else{
-            const {temperature, feelslike, weather_descriptions} = response.body.current
-            const {name, country, region} = response.body.location
-
             callback(undefined, `${name}, ${region}, ${country}. ${weather_descriptions}. It is currently ${temperature} degrees out. It feels like ${feelslike} degress out.`)
 
         }

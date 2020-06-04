@@ -10,7 +10,8 @@ const forecast = (lat, long, callback) => {
         }else if(responseError){
             callback(responseError.info)
         }else{
-            callback(undefined, `A temperatura atual é de ${temperature} graus. A sensação térmica é de ${feelslike} graus.`)
+            callback(undefined, `${name}, ${region}, ${country}. ${weather_descriptions}. It is currently ${temperature} degrees out. It feels like ${feelslike} degress out.`)
+
         }
 
     })

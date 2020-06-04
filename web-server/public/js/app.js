@@ -20,9 +20,9 @@ weatherForm.addEventListener('submit', (e) => {
                 
                 messageOne.textContent = `Error: ${data.error}`
             }else{
-                messageOne.textContent = `Busca por: ${data.address}`
-                messageTwo.textContent = data.address == 'Julie' || data.address ==  'julie' ? 'Encontrado: Pessoa mais maravilhosa que já conheci':`Encontrado: ${data.location}`
-                messageThree.textContent = data.address == 'Julie' || data.address ==  'julie' ? 'Temperatura: Não importa, com ela presente o dia está sempre ensolarado.':`Temperatura: ${data.forecast}`
+                messageOne.textContent = `Searched for: ${data.address}`
+                messageTwo.textContent = `Found: ${data.location}`
+                messageThree.textContent = `Forecast: ${data.forecast}`
             }
         })
     })

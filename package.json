@@ -1,0 +1,26 @@
+{
+  "name": "node-couse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run web-server",
+    "web-server": "node web-server/src/app.js",
+    "weather-app": "node weather-app/app.js",
+    "notes-app": "node notes-app/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/herbertsds/node-couse.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/herbertsds/node-couse/issues"
+  },
+  "homepage": "https://github.com/herbertsds/node-couse#readme",
+  "dependencies": {
+    "translate": "^1.1.2"
+  }
+}

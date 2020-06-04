@@ -23,22 +23,22 @@ app.use(express.static(publicDirectoryPath))
 
 app.get('', (req, res) => {
     res.render('index', {
-        title: 'Weather',
+        title: 'Clima',
         name: 'Herbert Salazar'
     })
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'About Me',
+        title: 'Sobre mim',
         name: 'Herbert Salazar'
     })
 })
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        message: 'Help me please!',
-        title: 'Help',
+        message: 'Digite o nome de um local. Experimente digitar o seu nome.',
+        title: 'Ajuda',
         name: 'Herbert Salazar'
     })
 })
@@ -47,7 +47,7 @@ app.get('/weather', ({query:{address}}, res) => {
 
     if(!address){
         return res.send({
-            error: 'You must provide an address'
+            error: 'É necessário fornecer um endereço'
         })
     }
 
@@ -103,7 +103,7 @@ app.get('/help/*', (req, res) => {
 app.get('*', (req, res) => {
     res.render('error', {
         title: '404',
-        errorMessage: 'Page not found.',
+        errorMessage: 'Página não encontrada.',
         name: 'Herbert Salazar'
     })
 })

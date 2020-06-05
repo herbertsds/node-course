@@ -11,7 +11,6 @@ const forecast = (lat, long, callback) => {
             callback(responseError.info)
         }else{
             callback(undefined, `${name}, ${region}, ${country}. ${weather_descriptions}. It is currently ${temperature} degrees out. It feels like ${feelslike} degress out. The humidity is ${humidity}%.`)
-
         }
 
     })

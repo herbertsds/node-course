@@ -10,7 +10,8 @@
     "weather-app": "node weather-app/app.js",
     "notes-app": "node notes-app/app.js",
     "dev-ws": "nodemon web-server/src/app.js -e js,hbs",
-    "dev": "nodemon web-server/src/app.js -e js,hbs"
+    "dev": "nodemon web-server/src/app.js -e js,hbs",
+    "dbstart": "docker run --name mongodb -p 27017:27017 -v /home/herbertsds/Documentos/Node/node-course/mongodb-data:/data/db -d mongo"
   },
   "repository": {
     "type": "git",

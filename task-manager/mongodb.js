@@ -12,8 +12,16 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
 
     const db = client.db(databaseName)
     
-    db.collection('users').deleteMany({ 
-        age: 27
+    // db.collection('users').deleteMany({ 
+    //     age: 27
+    // }).then((result) => {
+    //     console.log(result)
+    // }).catch((error) => {
+    //     console.log(error)
+    // })
+
+    db.collection('tasks').deleteOne({ 
+        description: 'Do Master course'
     }).then((result) => {
         console.log(result)
     }).catch((error) => {

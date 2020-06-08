@@ -15,8 +15,8 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
     db.collection('users').updateOne({ 
         _id: ObjectID('5ede856551fb8321111ecbed')
     },{
-        $set: {
-            name: 'Mike'
+        $inc: {
+            age: 1
         }
     }).then((result) => {
         console.log(result)

@@ -11,9 +11,6 @@ const port = process.env.PORT || 3000
 app.use(express.json())
 app.use(userRouter)
 
-
-
-
 app.post('/tasks', async (req, res) => {
     const task = new Task(req.body)
 

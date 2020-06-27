@@ -1,7 +1,9 @@
 const express = require('express')
 const User = require('../models/user')
+const auth = require('../middleware/auth')
 const router = express.Router()
 
+// Create new user
 router.post('/users', async (req, res) => {
     const user = new User(req.body)
 
@@ -15,6 +17,7 @@ router.post('/users', async (req, res) => {
 
 })
 
+// Login
 router.post('/users/login', async (req, res) => {
     try {
         const user = await User.findByCredentials(req.body.email, req.body.password)
@@ -25,7 +28,8 @@ router.post('/users/login', async (req, res) => {
     }
 })
 
-router.get('/users', async (req, res) => {
+// Get all users
+router.get('/users', auth, async (req, res) => {
     
     try {
         const users = await User.find({})

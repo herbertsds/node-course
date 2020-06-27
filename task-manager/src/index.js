@@ -7,8 +7,11 @@ const app = express()
 const port = process.env.PORT || 3000
 
 app.use((req, res, next) => {
-    console.log(req.method, req.path)
-    next()
+    if(req.method === 'GET'){
+        res.send('GET requests are disabled')
+    } else{
+        next()
+    }
 })
 
 // Automaticaly parse incoming JSON

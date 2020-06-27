@@ -7,12 +7,9 @@ const app = express()
 const port = process.env.PORT || 3000
 
 app.use((req, res, next) => {
-    if(req.method === 'GET'){
-        res.send('GET requests are disabled')
-    } else{
-        next()
-    }
+    res.status(503).send('Server is down for maintenance. Please comme back later.')
 })
+
 
 // Automaticaly parse incoming JSON
 app.use(express.json())

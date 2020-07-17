@@ -22,12 +22,12 @@ app.listen(port, () => {
     console.log(`Server is up on port ${port}`)
 })
 
-const pet = {
-    'name': 'Hal'
+const Task = require('./models/task')
+
+const main = async () => {
+    const task = await Task.findById('5f12073cc7d36537cd6b7caf')
+    await task.populate('owner').execPopulate()
+    console.log(task.owner)
 }
 
-pet.toJSON = function(){
-    return {}
-}
-
-console.log(JSON.stringify(pet))
+main()
